@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-10974720556"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'AW-10974720556');
+    </script>
+
+    <script>
+        function gtag_report_conversion(url) {
+            var callback = function () {
+                if (typeof(url) != 'undefined') {
+                    window.location = url;
+                }
+            };
+            gtag('event', 'conversion', {
+                'send_to': 'AW-10974720556/N5flCKPezo4ZEKzkk_Eo',
+                'event_callback': callback
+            });
+            return false;
+        }
+    </script>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terapia Individual | Centro Alessa</title>
+    <meta name="description" content="Terapia individual con enfoque cognitivo-conductual en CDMX. Proceso estructurado, objetivos claros y herramientas prácticas para tu vida diaria.">
+
+    <link rel="shortcut icon" href="../img/logo 18x18c.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link href="https://fonts.googleapis.com/css2?family=Tilt+Warp&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../new-css/base.css">
+    <link rel="stylesheet" href="../new-css/global.css">
+    <link rel="stylesheet" href="../new-css/servicio.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+<body>
+
+    <!-- ==== HEADER ==== -->
+    <header class="head-servicio head-servicio--individual">
+        <nav class="nav" aria-label="Navegación principal">
+            <a class="nav__logo" href="../index.html">
+                <img src="../img/alessa-nombre grande.png" alt="Centro Alessa">
+            </a>
+
+            <button class="nav__toggle" id="nav-toggle" aria-controls="nav-menu" aria-expanded="false" aria-label="Abrir menú">
+                <i class="fas fa-bars" aria-hidden="true"></i>
+            </button>
+
+            <ul class="nav__menu" id="nav-menu" role="list">
+                <li class="nav__item">
+                    <a class="nav__link" href="../index.html">Inicio</a>
+                </li>
+
+                <li class="nav__item nav__item--dropdown">
+                    <button class="nav__link nav__dropdown-toggle" aria-expanded="false" aria-haspopup="true">
+                    Servicios <i class="fas fa-chevron-down nav__chevron" aria-hidden="true"></i>
+                    </button>
+                    <ul class="nav__dropdown" role="list">
+                    <li><a class="nav__dropdown-link" href="terapia-individual.html">Terapia Individual</a></li>
+                    <li><a class="nav__dropdown-link" href="terapia-pareja.html">Terapia de Pareja</a></li>
+                    <li><a class="nav__dropdown-link" href="terapia-infantil.html">Terapia Infantil y para Adolescentes</a></li>
+                    <li><a class="nav__dropdown-link" href="terapia-online.html">Terapia Online</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav__item">
+                    <a class="nav__link" href="../index.html#equipo">Psicólogos</a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link" href="../preguntas-frecuentes.html">Preguntas Frecuentes</a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link" href="../contacto.html">Contacto</a>
+                </li>
+                <li class="nav__item nav__item--cta">
+                    <a class="nav__cta"
+                    href="https://www.doctoralia.com.mx/clinicas/centro-de-atencion-psicologica-alessa"
+                    target="_blank"
+                    rel="nofollow noopener noreferrer"
+                    aria-label="Agendar cita en Doctoralia">
+                    Agendar
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <section class="titulo-servicio" aria-labelledby="seo-title-individual">
+            <p class="titulo-servicio__label" aria-hidden="true">Terapia Individual</p>
+            <h1 id="seo-title-individual" class="seo-h1">Terapia individual cognitivo-conductual en CDMX</h1>
+        </section>
+
+        <div class="wave" style="height: 300px; overflow: hidden;">
+            <svg viewBox="0 0 500 110" preserveAspectRatio="none" style="height: 100%; width: 100%;">
+                <path d="M0.00,49.98 C187.63,125.83 301.63,48.86 500.00,49.98 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill:#f0f8ff;"></path>
+            </svg>
+        </div>
+    </header>
+
+    <main class="main--individual">
+        <!-- Botones flotantes -->
+        <button id="btnSeguimiento" class="fadeIn">
+            <a href="https://api.whatsapp.com/send/?phone=525636140438&text=¡Hola%21+Me+gustaría+agendar+una+sesión&type=phone_number&app_absent=0"
+            onclick="gtag_report_conversion('https://wa.me/525636140438')">
+                <img src="../img/Whats logo.png" alt="WhatsApp">
+            </a>
+        </button>
+        <button id="btnArriba" class="fadeIn" onclick="volverArriba()">
+            <img src="../img/volver 2.png" alt="Volver arriba">
+        </button>
+
+        <!-- ==== INTRO ==== -->
+        <section class="service-intro" aria-labelledby="intro-individual-title">
+            <div class="service-intro__content">
+                <div class="service-intro__text">
+                    <h2 id="intro-individual-title">Empieza un proceso claro, estructurado y enfocado en objetivos.</h2>
+
+                    <p>La terapia individual en Alessa está basada en Terapia Cognitivo Conductual. Trabajamos para identificar patrones, entender qué mantiene el problema y desarrollar herramientas prácticas para tu vida diaria. El proceso es profesional, estructurado y centrado en objetivos claros desde el inicio.</p>
+
+                    <div class="boton-on boton-on--dual">
+                    <a class="cta-link"
+                    href="https://www.doctoralia.com.mx/clinicas/centro-de-atencion-psicologica-alessa"
+                    target="_blank"
+                    rel="nofollow noopener noreferrer">
+                    <button class="submit-on">Agenda tu sesión en Doctoralia</button>
+                    </a>
+                    </div>
+                </div>
+
+                <div class="service-intro__image">
+                    <img src="../img/Terapia individual.jpg" alt="Sesión de terapia individual en Centro Alessa">
+                </div>
+            </div>
+        </section>
+
+        <!-- ==== PARA QUIÉN ES ==== -->
+        <section class="service-audience" aria-labelledby="audience-individual-title">
+            <h2 id="audience-individual-title" class="service-section__title">¿Para quién es la terapia individual?</h2>
+            <p class="service-section__subtitle">Puede ser útil si estás pasando por un momento difícil o si quieres entender mejor lo que te pasa y trabajar en cambios concretos.</p>
+
+            <div class="audience-cards">
+                <div class="audience-card">
+                    <div class="audience-card__icon">🧠</div>
+                    <div class="audience-card__body">
+                    <h3>Ansiedad y estrés</h3>
+                    <p>Aprende a identificar detonantes, responder con más claridad y reducir conductas que mantienen el malestar.</p>
+                    </div>
+                </div>
+
+                <div class="audience-card">
+                    <div class="audience-card__icon">🤝</div>
+                    <div class="audience-card__body">
+                    <h3>Relaciones y límites</h3>
+                    <p>Trabaja patrones de comunicación, decisiones difíciles y formas más sanas de relacionarte.</p>
+                    </div>
+                </div>
+
+                <div class="audience-card">
+                    <div class="audience-card__icon">💭</div>
+                    <div class="audience-card__body">
+                    <h3>Hábitos y pensamientos</h3>
+                    <p>Detecta patrones que se repiten y desarrolla herramientas prácticas para intervenirlos.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==== CÓMO TRABAJAMOS ==== -->
+        <section class="service-proceso-escalonado" aria-labelledby="process-individual-title">
+            <h2 id="process-individual-title" class="service-section__title">Cómo trabajamos en Alessa</h2>
+            <div class="proceso-escalonado__steps">
+                <div class="proceso-step proceso-step--1">
+                    <div class="proceso-step__icon">📋</div>
+                    <p class="proceso-step__number">1. Evaluación</p>
+                    <p>Exploramos el motivo de consulta, contexto y patrones relevantes.</p>
+                </div>
+                <div class="proceso-step proceso-step--2">
+                    <div class="proceso-step__icon">🎯</div>
+                    <p class="proceso-step__number">2. Objetivos claros</p>
+                    <p>Definimos qué quieres trabajar y cómo vamos a medir avance.</p>
+                </div>
+                <div class="proceso-step proceso-step--3">
+                    <div class="proceso-step__icon">🧩</div>
+                    <p class="proceso-step__number">3. Intervención TCC</p>
+                    <p>Aplicamos estrategias concretas para modificar pensamientos, emociones y conductas.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==== FAQ ==== -->
+        <section class="service-faq" aria-labelledby="faq-individual-title">
+            <h2 id="faq-individual-title" class="service-section__title">Preguntas frecuentes</h2>
+
+            <div class="faq-accordion">
+                <div class="faq-item">
+                    <button class="faq-item__question" aria-expanded="false">
+                    ¿La terapia es solo para crisis?
+                    <i class="fas fa-chevron-down faq-chevron" aria-hidden="true"></i>
+                    </button>
+                    <div class="faq-item__answer">
+                    <p>No. También puede ayudarte a entender patrones, tomar decisiones y desarrollar herramientas para tu vida diaria.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-item__question" aria-expanded="false">
+                    ¿Cuánto dura el proceso?
+                    <i class="fas fa-chevron-down faq-chevron" aria-hidden="true"></i>
+                    </button>
+                    <div class="faq-item__answer">
+                    <p>Depende del motivo de consulta, los objetivos y la frecuencia de trabajo. Lo definimos juntos desde la primera sesión.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-item__question" aria-expanded="false">
+                    ¿La terapia está basada en evidencia?
+                    <i class="fas fa-chevron-down faq-chevron" aria-hidden="true"></i>
+                    </button>
+                    <div class="faq-item__answer">
+                    <p>Sí. En Alessa trabajamos desde Terapia Cognitivo Conductual, con estructura y objetivos claros.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-item__question" aria-expanded="false">
+                    ¿Cómo puedo agendar?
+                    <i class="fas fa-chevron-down faq-chevron" aria-hidden="true"></i>
+                    </button>
+                    <div class="faq-item__answer">
+                    <p>Puedes hacerlo directamente por Doctoralia y usar WhatsApp si necesitas resolver una duda puntual.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==== CTA FINAL ==== -->
+        <section class="cta" aria-labelledby="cta-individual-title">
+            <h2 id="cta-individual-title">Agenda tu primera sesión</h2>
+            <p class="cta-text">Si buscas un proceso profesional, claro y estructurado, puedes comenzar desde aquí.</p>
+
+            <div class="boton-on boton-on--dual boton-on--center">
+                <a href="https://www.doctoralia.com.mx/clinicas/centro-de-atencion-psicologica-alessa"
+                target="_blank" rel="nofollow noopener noreferrer">
+                    <button class="submit-on">Agendar en Doctoralia</button>
+                </a>
+                <a href="https://wa.me/525636140438?text=Hola,%20me%20gustaría%20agendar%20una%20sesión%20de%20terapia%20individual"
+                onclick="gtag_report_conversion('https://wa.me/525636140438?text=Hola,%20me%20gustaría%20agendar%20una%20sesión%20de%20terapia%20individual')">
+                    <button class="submit-on submit-on--secondary">Hablar por WhatsApp</button>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- ==== FOOTER ==== -->
+    <footer>
+        <div class="contenedor-footer">
+            <div class="content-foo">
+                <h4>Contacto</h4>
+                <p>+525636140438</p>
+            </div>
+            <div class="content-foo">
+                <h4>Email</h4>
+                <a href="mailto:contacto@alessa.mx" target="_blank">
+                    <p>centroalessa@gmail.com</p>
+                </a>
+            </div>
+            <div class="content-foo">
+                <h4>Ubicación</h4>
+                <p>Calle Tabasco 56, CDMX<br>Col. Roma Norte.</p>
+            </div>
+        </div>
+
+        <div class="footer-legal">
+            <a href="../legales/tyc.html">Términos y condiciones</a>
+            <a href="../legales/aviso.html">Aviso de privacidad</a>
+        </div>
+
+        <div class="titulo-final">
+            <h3>© Centro de Atención Psicológica: Alessa</h3>
+        </div>
+    </footer>
+
+    <script src="../js/al.js"></script>
+
+    <!-- Acordeón FAQ -->
+    <script>
+        document.querySelectorAll('.faq-item__question').forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                var item = this.closest('.faq-item');
+                var isOpen = item.classList.contains('is-open');
+
+                document.querySelectorAll('.faq-item').forEach(function(el) {
+                    el.classList.remove('is-open');
+                    el.querySelector('.faq-item__question').setAttribute('aria-expanded', 'false');
+                });
+
+                if (!isOpen) {
+                    item.classList.add('is-open');
+                    this.setAttribute('aria-expanded', 'true');
+                }
+            });
+        });
+    </script>
+</body>
+</html> 

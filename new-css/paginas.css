@@ -1,0 +1,473 @@
+/*
+    PROYECTO: Alessa - RAPADO
+    ARCHIVO: paginas.css
+    DESCRIPCIÓN: Estilos compartidos para páginas secundarias:
+                 contacto.html y preguntas-frecuentes.html
+*/
+
+/* ====
+   HEADER GENÉRICO DE PÁGINA
+   Homologado con las páginas de servicio
+   ==== */
+
+.head-pagina {
+    position: relative;
+    width: 100%;
+    min-height: 420px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    background-size: cover;
+    background-position: center 35%;
+    background-repeat: no-repeat;
+}
+
+.head-pf {
+    background:
+        linear-gradient(
+            to right,
+            rgba(19, 81, 153, 0.575),
+            rgba(51, 124, 187, 0.267)
+        ),
+        url("../img/preguntas-f.jpeg");
+    background-size: cover;
+    background-position: center 35%;
+    background-repeat: no-repeat;
+}
+
+.head-contacto {
+    background:
+        linear-gradient(
+            to right,
+            rgba(44, 48, 109, 0.685),
+            rgba(43, 40, 73, 0.24)
+        ),
+        url("../img/contacto-f.jpg");
+    background-size: cover;
+    background-position: center 75%;
+    background-repeat: no-repeat;
+}
+
+.head-pagina .nav {
+    position: relative;
+    z-index: 3;
+}
+
+.titulo-pagina {
+    position: relative;
+    z-index: 2;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px 160px;
+    text-align: center;
+}
+
+.titulo-pagina h1 {
+    margin: 0;
+    color: #fff;
+    font-size: clamp(34px, 5vw, 56px);
+    font-weight: 300;
+    line-height: 1.15;
+    letter-spacing: 0.06em;
+    text-align: center;
+    text-transform: uppercase;
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.25);
+}
+
+.titulo-pagina h1::after {
+    content: "";
+    display: block;
+    width: 48px;
+    height: 3px;
+    margin: 14px auto 0;
+    border-radius: 2px;
+    background: rgba(255, 255, 255, 0.7);
+}
+
+.head-pagina .wave {
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    width: 100%;
+    height: auto;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.head-pagina .wave svg {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+/* ============================
+   PREGUNTAS FRECUENTES — ACORDEÓN
+   ============================ */
+
+.acordeon-pf {
+    max-width: 800px;
+    margin: 64px auto 20px;
+    padding: 0 24px;
+}
+
+.acordeon-pf__titulo {
+    text-align: center;
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    color: rgba(88, 112, 160, 1);
+    margin-bottom: 40px;
+    font-weight: 600;
+}
+
+.acordeon {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.acordeon-item {
+    border-radius: 12px;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0 2px 10px rgba(88, 112, 160, 0.08);
+    border-left: 4px solid rgba(88, 112, 160, 0.25);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.acordeon-item.activo {
+    border-left-color: rgba(88, 112, 160, 1);
+    box-shadow: 0 4px 16px rgba(88, 112, 160, 0.15);
+}
+
+.acordeon-btn {
+    width: 100%;
+    background: none;
+    border: none;
+    padding: 18px 20px;
+    text-align: left;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #2d3a4a;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    transition: background 0.2s ease;
+    font-family: var(--font-main);
+}
+
+.acordeon-btn:hover {
+    background: rgba(88, 112, 160, 0.05);
+}
+
+.acordeon-icono {
+    color: rgba(88, 112, 160, 0.7);
+    font-size: 0.85rem;
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+}
+
+.acordeon-item.activo .acordeon-icono {
+    transform: rotate(180deg);
+}
+
+.acordeon-contenido {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease, padding 0.3s ease;
+    padding: 0 20px;
+}
+
+.acordeon-item.activo .acordeon-contenido {
+    max-height: 500px;
+    padding: 0 20px 18px;
+}
+
+.acordeon-contenido p,
+.acordeon-contenido ol {
+    font-size: 0.97rem;
+    color: #555;
+    line-height: 1.75;
+}
+
+.acordeon-contenido ol {
+    padding-left: 20px;
+}
+
+.acordeon-contenido ol li {
+    margin-bottom: 6px;
+}
+
+/* ============================
+   MAPA COMPARTIDO
+   ============================ */
+
+.mapa-seccion {
+    display: flex;
+    justify-content: center;
+    padding: 40px 24px 40px;
+}
+
+.mapa-seccion iframe {
+    width: 100%;
+    max-width: 1000px;
+    height: 420px;
+    border-radius: 14px;
+    border: none;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+}
+
+/* ============================
+   CONTACTO
+   ============================ */
+
+.contacto-intro {
+    text-align: center;
+    max-width: 620px;
+    margin: 60px auto 40px;
+    padding: 0 24px;
+}
+
+.contacto-intro p {
+    font-size: 1.15rem;
+    color: rgba(88, 112, 160, 0.9);
+    line-height: 1.75;
+}
+
+.contacto-cta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.btn-whatsapp {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #25d366;
+    color: #fff;
+    font-size: 1.05rem;
+    font-weight: 600;
+    padding: 14px 32px;
+    border-radius: 50px;
+    text-decoration: none;
+    box-shadow: 0 4px 14px rgba(37, 211, 102, 0.35);
+    transition: transform 0.2s, box-shadow 0.2s;
+    font-family: var(--font-main);
+}
+
+.btn-whatsapp i {
+    font-size: 1.3rem;
+}
+
+.btn-whatsapp:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(37, 211, 102, 0.45);
+}
+
+.contacto-tel {
+    font-size: 0.97rem;
+    color: var(--color-texto-light);
+    text-align: center;
+}
+
+.contacto-divider {
+    width: 60px;
+    height: 2px;
+    background: rgba(88, 112, 160, 0.2);
+    border: none;
+    margin: 32px auto;
+}
+
+.doctoralia-widget {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 48px;
+    padding: 0 24px;
+}
+
+/* ====
+   CONTACTO — LAYOUT DOS COLUMNAS
+   ==== */
+
+.contacto-principal {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 60px 24px 40px;
+    align-items: start;
+}
+
+.contacto-principal__info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+}
+
+/* Reset de márgenes cuando están dentro del grid */
+.contacto-principal__info .contacto-intro,
+.contacto-principal__info .contacto-cta,
+.contacto-principal__widget .doctoralia-widget {
+    margin: 0;
+    padding: 0;
+}
+
+.contacto-principal__info .contacto-intro {
+    text-align: left;
+    max-width: none;
+}
+
+.contacto-principal__info .contacto-cta {
+    align-items: flex-start;
+}
+
+.contacto-principal__widget {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contacto-principal__widget .doctoralia-widget {
+    width: 100%;
+    padding: 0;
+}
+
+/* ====
+   CONTACTO — TARJETA DE INFORMACIÓN
+   ==== */
+
+.contacto-card {
+    width: 100%;
+    overflow: hidden;
+    background: #fff;
+    border: 1px solid rgba(88, 112, 160, 0.1);
+    border-radius: 22px;
+    box-shadow: 0 10px 30px rgba(45, 58, 74, 0.1);
+}
+
+.contacto-card__contenido {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    padding: 32px;
+}
+
+.contacto-card__mensaje {
+    padding-left: 18px;
+    border-left: 4px solid rgba(88, 112, 160, 1);
+}
+
+.contacto-card__mensaje p {
+    margin: 0;
+    color: #4a4f58;
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+
+.contacto-card__mensaje strong {
+    color: rgba(88, 112, 160, 1);
+    font-weight: 600;
+}
+
+.contacto-card__boton {
+    width: 100%;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.contacto-card__datos {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 24px;
+    padding: 18px 32px;
+    background: rgba(88, 112, 160, 0.045);
+    border-top: 1px solid rgba(88, 112, 160, 0.1);
+}
+
+.contacto-card__dato {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    color: #4a4f58;
+    font-size: 0.93rem;
+    font-weight: 600;
+}
+
+.contacto-card__dato a {
+    color: #4a4f58;
+    text-decoration: none;
+}
+
+.contacto-card__dato a:hover {
+    color: rgba(88, 112, 160, 1);
+}
+
+.contacto-card__dato--derecha {
+    align-items: flex-end;
+    text-align: right;
+}
+
+.contacto-card__etiqueta {
+    color: rgba(88, 112, 160, 0.65);
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.contacto-card__separador {
+    width: 1px;
+    height: 32px;
+    background: rgba(88, 112, 160, 0.16);
+}
+
+/* ============================
+   RESPONSIVE
+   ============================ */
+
+@media (max-width: 768px) {
+    .head-pagina {
+        min-height: 380px;
+    }
+
+    .head-pf,
+    .head-contacto {
+        background-position: center;
+    }
+
+    .titulo-pagina {
+        padding: 20px 16px 140px;
+    }
+
+    .contacto-principal {
+        grid-template-columns: 1fr;
+        gap: 32px;
+        padding: 40px 24px;
+    }
+
+    .contacto-principal__info {
+        align-items: center;
+    }
+
+    .contacto-principal__info .contacto-intro {
+        text-align: center;
+    }
+
+    .contacto-principal__info .contacto-cta {
+        align-items: center;
+    }
+}
+
+@media (max-width: 600px) {
+    .acordeon-pf__titulo { font-size: 1.4rem; }
+    .acordeon-btn { font-size: 0.93rem; }
+    .mapa-seccion iframe { height: 260px; }
+    .contacto-intro p { font-size: 1rem; }
+}

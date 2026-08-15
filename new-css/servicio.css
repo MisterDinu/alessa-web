@@ -1,0 +1,1435 @@
+/*
+    PROYECTO: Alessa — RAPADO
+    ARCHIVO: servicio.css
+    DESCRIPCIÓN: Estilos para todas las páginas de servicio.
+
+    ÍNDICE:
+        1.  Header compartido
+        2.  Intro compartida (2 columnas)
+        3.  Botones CTA compartidos
+        4.  [ONLINE] Disponibilidad
+        5.  [ONLINE] Beneficios
+        6.  [ONLINE] FAQ cards (legacy — pendiente migrar)
+        7.  Para quién es / Señales de alerta
+        8.  Hero asimétrico (Pareja)
+        9.  Mosaico (Pareja)
+        10. Proceso escalonado (Pareja + Individual)
+        11. Etapas (Infantil)
+        12. FAQ acordeón compartida
+        13. CTA final compartido
+        14. Overrides por página
+        15. Responsive
+*/
+
+/* ====
+   1. HEADER COMPARTIDO
+   ==== */
+
+.head-servicio {
+    position: relative;
+    min-height: 420px;
+    background-size: cover;
+    background-position: center 35%;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.head-servicio--individual {
+    background:
+        linear-gradient(rgba(61, 108, 173, 0.493), rgba(20, 49, 130, 0.26)),
+        url("../img/Terapia individual.jpeg");
+    background-size: cover;
+    background-position: center 35%;
+}
+
+.head-servicio--online {
+    background:
+        linear-gradient(rgba(41, 31, 131, 0.342), rgba(166, 143, 250, 0.116)),
+        url("../img/Terapia online.jpg");
+    background-size: cover;
+    background-position: center 35%;
+}
+
+.head-servicio--pareja {
+    background:
+        linear-gradient(rgba(112, 88, 160, 0.82), rgba(112, 88, 160, 0.65)),
+        url("../img/pareja-hero.jpg");
+    background-size: cover;
+    background-position: center 35%;
+}
+
+.head-servicio--infantil {
+    background:
+        linear-gradient(rgba(0, 144, 168, 0.82), rgba(0, 144, 168, 0.65)),
+        url("../img/infantil-hero.jpg");
+    background-size: cover;
+    background-position: center 35%;
+}
+
+/* Legacy — Online aún usa esta clase */
+.head-online {
+    position: relative;
+    min-height: 420px;
+    background:
+        linear-gradient(rgba(43, 146, 211, 0.533), rgba(31, 63, 178, 0.479)),
+        url("../img/Terapia online.jpg");
+    background-size: cover;
+    background-position: center 35%;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.head-servicio .nav,
+.head-online .nav {
+    position: relative;
+    z-index: 3;
+}
+
+.titulo-servicio {
+    position: relative;
+    z-index: 2;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px 160px;
+    text-align: center;
+}
+
+/* Legacy — Online aún usa esta clase */
+.titulo-online {
+    position: relative;
+    z-index: 2;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px 160px;
+    text-align: center;
+}
+
+.titulo-servicio__label,
+.titulo-online__label {
+    font-size: clamp(34px, 5vw, 56px);
+    font-weight: 300;
+    letter-spacing: 0.06em;
+    color: #ffff;
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.25);
+    margin: 0;
+    text-transform: uppercase;
+}
+
+.titulo-servicio__label::after,
+.titulo-online__label::after {
+    content: '';
+    display: block;
+    width: 48px;
+    height: 3px;
+    background: rgba(255, 255, 255, 0.7);
+    margin: 14px auto 0;
+    border-radius: 2px;
+}
+
+.seo-h1 {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+.wave {
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    width: 100%;
+    z-index: 2;
+}
+
+.head-servicio .nav__link:hover,
+.head-online .nav__link:hover {
+    background: rgba(255, 255, 255, 0.12);
+}
+
+.head-servicio .nav__cta,
+.head-online .nav__cta {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+/* ====
+   2. INTRO COMPARTIDA (2 columnas)
+   ==== */
+
+.service-intro {
+    background-color: #f0f8ff;
+    padding: 4.5rem 2rem 5rem;
+}
+
+/* Legacy — Online aún usa esta clase */
+.texton {
+    background-color: #f0f8ff;
+    padding: 4.5rem 2rem 5rem;
+}
+
+.service-intro__content,
+.texton-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    align-items: center;
+    gap: 3.5rem;
+}
+
+.service-intro__text,
+.on-text {
+    max-width: 620px;
+}
+
+.service-intro__text h2,
+.on-text h2 {
+    font-size: clamp(36px, 3.8vw, 50px);
+    line-height: 1.18;
+    margin-bottom: 0.6rem;
+    color: var(--color-secundario);
+    font-weight: 600;
+    max-width: 100%;
+}
+
+.service-intro__text h2::after,
+.on-text h2::after {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 3px;
+    background: var(--color-secundario);
+    margin-top: 12px;
+    border-radius: 2px;
+    opacity: 0.5;
+}
+
+.service-intro__text p,
+.on-text p {
+    font-size: 1.05rem;
+    color: var(--color-texto-light);
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    margin-top: 1.2rem;
+}
+
+.service-intro__image,
+.on-image {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.service-intro__image img,
+.on-image img {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 18px;
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.12);
+    object-fit: cover;
+    display: block;
+}
+
+/* ====
+   3. BOTONES CTA COMPARTIDOS
+   ==== */
+
+#btnPsic {
+    background: transparent;
+    padding: 0;
+    border-radius: 0;
+}
+
+#btnPsic img {
+    width: 62px;
+    height: auto;
+    display: block;
+}
+
+.boton-on {
+    padding-top: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.boton-on--dual { justify-content: flex-start; }
+.boton-on--center { justify-content: center; }
+
+.cta-link { display: inline-flex; }
+
+.submit-on {
+    padding: 14px 28px;
+    background-color: var(--color-primario);
+    color: #ffff;
+    border: none;
+    border-radius: 999px;
+    cursor: pointer;
+    min-width: 248px;
+    min-height: 52px;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: opacity 0.2s, transform 0.15s;
+}
+
+.submit-on:hover {
+    opacity: 0.92;
+    transform: translateY(-1px);
+}
+
+.submit-on--secondary {
+    background-color: transparent;
+    color: var(--color-primario);
+    border: 1.5px solid rgba(31, 110, 132, 0.55);
+}
+
+.submit-on--secondary:hover {
+    background-color: rgba(31, 110, 132, 0.06);
+    opacity: 1;
+}
+
+/* ====
+   4. [ONLINE] DISPONIBILIDAD
+   ==== */
+
+.online-disponibilidad {
+    margin: 0 0 2rem;
+    padding: 1rem 1.2rem;
+    background: rgba(255, 255, 255, 0.82);
+    border: 1px solid rgba(30, 98, 116, 0.10);
+    border-radius: 14px;
+    color: var(--color-texto-light);
+    line-height: 1.7;
+    font-size: 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+}
+
+.online-disponibilidad strong {
+    color: var(--color-secundario);
+    font-weight: 600;
+}
+
+/* ====
+   5. [ONLINE] BENEFICIOS
+   ==== */
+
+.benefits {
+    padding: 5rem 2rem;
+    background-color: #ffff;
+    text-align: center;
+}
+
+.benefits h2 {
+    font-size: clamp(26px, 2.8vw, 38px);
+    margin-bottom: 2.5rem;
+    color: var(--color-primario);
+    font-weight: 400;
+}
+
+.benefit-cards {
+    max-width: 1180px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.benefits .card {
+    background-color: #f9fbfc;
+    border: 1px solid rgba(30, 98, 116, 0.10);
+    border-radius: 14px;
+    padding: 2rem 1.5rem;
+    max-width: 255px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+    text-align: center;
+}
+
+.benefits .card .icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.benefits .card h3 {
+    font-size: 1.05rem;
+    color: var(--color-secundario);
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+}
+
+.benefits .card p {
+    font-size: 0.96rem;
+    color: var(--color-texto-light);
+    line-height: 1.65;
+}
+
+/* ====
+   6. [ONLINE] FAQ CARDS (legacy — pendiente migrar a acordeón)
+   ==== */
+
+.faq-section {
+    padding: 5rem 2rem;
+    background-color: #ffff;
+    text-align: center;
+}
+
+.faq-section h2 {
+    font-size: clamp(26px, 2.8vw, 38px);
+    margin-bottom: 2.5rem;
+    color: var(--color-primario);
+    font-weight: 400;
+}
+
+.faq-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.faq-cards .card {
+    flex: 1 1 420px;
+    max-width: 500px;
+    background-color: #f9fbfc;
+    border: 1px solid rgba(30, 98, 116, 0.10);
+    border-radius: 14px;
+    padding: 2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+    text-align: left;
+}
+
+.icon-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.faq-cards .card .icon { font-size: 2rem; }
+
+.faq-cards .card h3 {
+    font-size: 1.05rem;
+    text-align: center;
+    margin-bottom: 0.85rem;
+    color: var(--color-secundario);
+    font-weight: 600;
+}
+
+.faq-cards .card p {
+    font-size: 0.98rem;
+    color: var(--color-texto-light);
+    line-height: 1.75;
+}
+
+/* ====
+   7. PARA QUIÉN ES / SEÑALES DE ALERTA
+   ==== */
+
+.service-audience {
+    padding: 5rem 2rem;
+    background-color: #ffff;
+    text-align: center;
+}
+
+.service-section__title {
+    font-size: clamp(26px, 2.8vw, 38px);
+    color: var(--color-primario);
+    font-weight: 500;
+    margin-bottom: 0.6rem;
+}
+
+.service-section__title::after {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 3px;
+    background: var(--color-secundario);
+    margin: 10px auto 0;
+    border-radius: 2px;
+    opacity: 0.5;
+}
+
+.service-section__subtitle {
+    font-size: 1rem;
+    color: var(--color-texto-light);
+    max-width: 680px;
+    margin: 0.5rem auto 2.5rem;
+    line-height: 1.75;
+}
+
+.audience-cards {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.audience-card {
+    flex: 1 1 280px;
+    max-width: 340px;
+    background-color: #f9fbfc;
+    border: 1px solid rgba(30, 98, 116, 0.10);
+    border-radius: 14px;
+    padding: 2rem 1.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+    display: flex;
+    align-items: flex-start;
+    gap: 1.1rem;
+    text-align: left;
+}
+
+.audience-card__icon {
+    width: 52px;
+    height: 52px;
+    flex-shrink: 0;
+    background: rgba(88, 112, 160, 0.10);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+}
+
+.audience-card__body h3 {
+    font-size: 1.05rem;
+    color: var(--color-secundario);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.audience-card__body p {
+    font-size: 0.96rem;
+    color: var(--color-texto-light);
+    line-height: 1.65;
+}
+
+.audience-cards--asimetrica {
+    display: grid;
+    grid-template-columns: 1.6fr 1fr;
+    gap: 1.5rem;
+    max-width: 1100px;
+    margin: 1.5rem auto 0;
+}
+
+.audience-cards--asimetrica .audience-card {
+    max-width: 100%;
+}
+
+.audience-alert {
+    max-width: 1100px;
+    margin: 1.5rem auto 0;
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    border-radius: 10px;
+    padding: 1.25rem 1.5rem;
+    text-align: left;
+}
+
+.audience-alert__icon {
+    font-size: 1.3rem;
+    flex-shrink: 0;
+}
+
+.audience-alert p {
+    font-size: 0.96rem;
+    color: var(--color-texto-light);
+    line-height: 1.7;
+}
+
+@media (max-width: 900px) {
+    .audience-cards--asimetrica {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ====
+   8. HERO ASIMÉTRICO (Pareja)
+   ==== */
+
+.hero-asimetrico {
+    background-color: rgba(240, 235, 250, 0.55);
+    padding: 5rem 2rem 5.5rem;
+}
+
+.hero-asimetrico__inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 42% 1fr;
+    align-items: center;
+    gap: 0;
+}
+
+.hero-asimetrico__imagen-wrap {
+    position: relative;
+    z-index: 1;
+}
+
+.hero-asimetrico__img {
+    width: 100%;
+    max-width: 480px;
+    height: 520px;
+    object-fit: cover;
+    border-radius: 18px;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.14);
+    display: block;
+}
+
+.hero-asimetrico__card-wrap {
+    position: relative;
+    padding-left: 0;
+}
+
+.hero-asimetrico__acento {
+    position: absolute;
+    top: -24px;
+    left: -32px;
+    width: 220px;
+    height: 220px;
+    border-radius: 18px;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.hero-asimetrico--pareja .hero-asimetrico__acento {
+    background: rgba(112, 88, 160, 0.12);
+}
+
+.hero-asimetrico__card {
+    position: relative;
+    z-index: 1;
+    background: #ffff;
+    border-radius: 18px;
+    padding: 2.8rem 2.5rem;
+    margin-left: -40px;
+    box-shadow: 0 4px 16px rgba(112, 88, 160, 0.10);
+}
+
+.hero-asimetrico__card h2 {
+    font-size: clamp(28px, 2.8vw, 40px);
+    line-height: 1.2;
+    margin-bottom: 0.6rem;
+    color: var(--color-secundario);
+    font-weight: 600;
+}
+
+.hero-asimetrico--pareja .hero-asimetrico__card h2 {
+    color: rgba(112, 88, 160, 1);
+}
+
+.hero-asimetrico__card h2::after {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 3px;
+    background: rgba(112, 88, 160, 0.5);
+    margin-top: 12px;
+    border-radius: 2px;
+}
+
+.hero-asimetrico__card p {
+    font-size: 1.02rem;
+    color: var(--color-texto-light);
+    line-height: 1.8;
+    margin-bottom: 1.2rem;
+    margin-top: 1rem;
+}
+
+.hero-asimetrico--pareja .submit-on {
+    background-color: rgba(112, 88, 160, 1);
+}
+
+.hero-asimetrico--pareja .submit-on--secondary {
+    background-color: transparent;
+    color: rgba(112, 88, 160, 1);
+    border-color: rgba(112, 88, 160, 0.45);
+}
+
+.hero-asimetrico--pareja .submit-on--secondary:hover {
+    background-color: rgba(112, 88, 160, 0.06);
+}
+
+
+/* ====
+   VARIANTES DE COLOR POR SERVICIO
+   ==== */
+
+
+.main--infantil .service-section__title {
+    color: rgba(0, 144, 168, 1);
+}
+
+.main--infantil .service-section__title::after {
+    background: rgba(0, 144, 168, 0.5);
+}
+
+.main--infantil .service-intro__text h2{
+    color: rgba(0, 144, 168, 1);
+}
+
+.main--infantil .submit-on {
+    background-color: rgba(0, 144, 168, 1);
+}
+
+.main--infantil .submit-on--secondary {
+    background-color: transparent;
+    color: rgba(0, 144, 168, 1);
+    border-color: rgba(0, 144, 168, 0.45);
+}
+
+.main--infantil .submit-on--secondary:hover {
+    background-color: rgba(0, 144, 168, 0.06);
+    opacity: 1;
+}
+
+.main--infantil .audience-card h3{
+    color: rgba(0, 144, 168, 1);
+}
+
+.main--infantil .audience-card--destacada {
+    background: rgba(0, 144, 168, 0.06);
+    border-color: rgba(0, 144, 168, 0.25);
+}
+
+.main--infantil .audience-card--destacada .audience-card__icon {
+    background: rgba(0, 144, 168, 0.18);
+}
+
+.main--infantil .audience-alert {
+    background: rgba(0, 144, 168, 0.06);
+    border-left: 4px solid rgba(0, 144, 168, 1);
+}
+
+.main--infantil .audience-alert strong {
+    color: rgba(0, 144, 168, 1);
+}
+
+/* ====
+   9. MOSAICO (Pareja)
+   ==== */
+
+.service-mosaico {
+    padding: 5rem 2rem;
+    background-color: #ffff;
+    text-align: center;
+}
+
+.mosaico-grid {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.4rem;
+}
+
+.mosaico-card {
+    background-color: #f9fbfc;
+    border: 1px solid rgba(112, 88, 160, 0.10);
+    border-radius: 18px;
+    padding: 2rem 1.75rem;
+    text-align: left;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.mosaico-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 24px rgba(112, 88, 160, 0.10);
+}
+
+.mosaico-card--wide {
+    grid-column: 1 / -1;
+}
+
+.mosaico-card__icon {
+    width: 52px;
+    height: 52px;
+    background: rgba(112, 88, 160, 0.10);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.mosaico-card h3 {
+    font-size: 1.05rem;
+    color: rgba(112, 88, 160, 1);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.mosaico-card p {
+    font-size: 0.96rem;
+    color: var(--color-texto-light);
+    line-height: 1.65;
+}
+
+/* ====
+   10. PROCESO ESCALONADO (Pareja + Individual)
+   ==== */
+
+.service-proceso-escalonado {
+    padding: 5rem 2rem 5.5rem;
+    background-color: rgba(240, 235, 250, 0.55);
+    text-align: center;
+}
+
+.proceso-escalonado__steps {
+    max-width: 1100px;
+    margin: 2.5rem auto 0;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 1.5rem;
+    position: relative;
+}
+
+.proceso-escalonado__steps::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    right: 10%;
+    height: 2px;
+    border-top: 2px dashed rgba(112, 88, 160, 0.25);
+    z-index: 0;
+    transform: translateY(-50%);
+}
+
+.proceso-step {
+    flex: 1 1 220px;
+    max-width: 300px;
+    background: #ffff;
+    border-radius: 18px;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+    position: relative;
+    z-index: 1;
+    border: 1px solid rgba(112, 88, 160, 0.08);
+}
+
+.proceso-step--1 { margin-bottom: 0; }
+.proceso-step--2 { margin-bottom: 28px; }
+.proceso-step--3 { margin-bottom: 10px; }
+
+.proceso-step__icon {
+    width: 64px;
+    height: 64px;
+    background: rgba(112, 88, 160, 0.10);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.7rem;
+    margin: 0 auto 1.1rem;
+}
+
+.proceso-step__number {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: rgba(112, 88, 160, 1);
+    letter-spacing: 0.04em;
+    margin-bottom: 0.4rem;
+    text-transform: uppercase;
+}
+
+.proceso-step p:not(.proceso-step__number) {
+    font-size: 0.95rem;
+    color: var(--color-texto-light);
+    line-height: 1.65;
+}
+
+/* ====
+   11. ETAPAS (Infantil — Niños vs Adolescentes)
+   ==== */
+
+.service-etapas {
+    padding: 5rem 2rem;
+    background-color: rgba(0, 144, 168, 0.05);
+    text-align: center;
+}
+
+.etapas-grid {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.etapa-card {
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.07);
+}
+
+.etapa-card__header {
+    background: rgba(0, 144, 168, 1);
+    padding: 1.5rem 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.etapa-card__header--adolescentes {
+    background: rgba(0, 110, 130, 1);
+}
+
+.etapa-card__header .etapa-icon {
+    font-size: 2rem;
+    background: rgba(255, 255, 255, 0.15);
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.etapa-card__header h3 {
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.etapa-card__header span {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 0.88rem;
+}
+
+.etapa-card__body {
+    background: #fff;
+    padding: 1.8rem 2rem;
+}
+
+.etapa-card__body p {
+    color: var(--color-texto-light);
+    font-size: 0.97rem;
+    line-height: 1.75;
+    margin-bottom: 1rem;
+}
+
+.etapa-tag {
+    display: inline-block;
+    background: rgba(0, 144, 168, 0.10);
+    color: rgba(0, 144, 168, 1);
+    border-radius: 999px;
+    padding: 4px 14px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    margin: 0.2rem 0.2rem 0 0;
+}
+
+/* ====
+   12. FAQ ACORDEÓN COMPARTIDA
+   ==== */
+
+.service-faq {
+    padding: 5rem 2rem;
+    background-color: #ffff;
+    text-align: center;
+}
+
+.faq-accordion {
+    max-width: 780px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.faq-item {
+    border: 1px solid rgba(30, 98, 116, 0.12);
+    border-radius: 12px;
+    margin-bottom: 0.75rem;
+    overflow: hidden;
+    background: #f9fbfc;
+}
+
+.faq-item__question {
+    width: 100%;
+    background: none;
+    border: none;
+    padding: 1.2rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-texto);
+    text-align: left;
+    gap: 1rem;
+    transition: background 0.15s;
+}
+
+.faq-item__question:hover {
+    background: rgba(88, 112, 160, 0.05);
+}
+
+.faq-item__question .faq-chevron {
+    flex-shrink: 0;
+    font-size: 0.85rem;
+    color: var(--color-secundario);
+    transition: transform 0.25s;
+}
+
+.faq-item.is-open .faq-chevron {
+    transform: rotate(180deg);
+}
+
+.faq-item__answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.2s;
+    padding: 0 1.5rem;
+}
+
+.faq-item.is-open .faq-item__answer {
+    max-height: 300px;
+    padding: 0 1.5rem 1.2rem;
+}
+
+.faq-item__answer p {
+    font-size: 0.98rem;
+    color: var(--color-texto-light);
+    line-height: 1.75;
+}
+
+/* ====
+   13. CTA FINAL COMPARTIDO
+   ==== */
+
+.cta {
+    padding: 5rem 2rem;
+    background: linear-gradient(to bottom, #f0f8ff, #e6eef3);
+    text-align: center;
+}
+
+.cta h2 {
+    color: var(--color-secundario);
+    font-size: clamp(26px, 2.8vw, 38px);
+    margin-bottom: 0.5rem;
+    font-weight: 400;
+}
+
+.cta .boton-on {
+    padding-top: 1.75rem;
+}
+
+.cta-text {
+    max-width: 760px;
+    margin: 0.75rem auto 0;
+    color: var(--color-texto-light);
+    font-size: 1.02rem;
+    line-height: 1.7;
+}
+
+/* CTA variante Pareja */
+.cta--pareja {
+    background: linear-gradient(to bottom, rgba(240, 235, 250, 0.7), rgba(220, 210, 245, 0.85));
+}
+
+.cta--pareja h2 {
+    color: rgba(112, 88, 160, 1);
+}
+
+.cta--pareja .submit-on {
+    background-color: rgba(112, 88, 160, 1);
+}
+
+.cta--pareja .submit-on--secondary {
+    background-color: transparent;
+    color: rgba(112, 88, 160, 1);
+    border-color: rgba(112, 88, 160, 0.45);
+}
+
+.cta--pareja .submit-on--secondary:hover {
+    background-color: rgba(112, 88, 160, 0.06);
+    opacity: 1;
+}
+
+/* CTA variante infantil — fondo teal clarito */
+.cta--infantil {
+    background: linear-gradient(to bottom, #f0f8ff, #e6eef3);
+}
+
+.cta--infantil h2 {
+    color: rgba(0, 144, 168, 1);
+}
+
+
+.cta--infantil .submit-on {
+    background-color: rgba(0, 144, 168, 1);
+}
+
+.cta--infantil .submit-on--secondary {
+    background-color: transparent;
+    color: rgba(0, 144, 168, 1);
+    border-color: rgba(0, 144, 168, 0.45);
+}
+
+.cta--infantil .submit-on--secondary:hover {
+    background-color: rgba(0, 144, 168, 0.06);
+    opacity: 1;
+}
+
+
+/* service-cta (variante con layout horizontal — disponible si se necesita) */
+.service-cta {
+    padding: 4rem 2rem;
+    background: linear-gradient(135deg, var(--color-primario) 0%, var(--color-secundario) 100%);
+    text-align: center;
+}
+
+.service-cta__inner {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2.5rem;
+    flex-wrap: wrap;
+}
+
+.service-cta__text {
+    text-align: left;
+    flex: 1 1 300px;
+}
+
+.service-cta__text h2 {
+    font-size: clamp(24px, 2.8vw, 36px);
+    color: #ffff;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.service-cta__text p {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.65;
+}
+
+.service-cta__actions {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+    flex-shrink: 0;
+}
+
+.cta-btn--primary {
+    padding: 14px 28px;
+    background-color: #ffff;
+    color: var(--color-primario);
+    border: none;
+    border-radius: 999px;
+    cursor: pointer;
+    min-width: 220px;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: opacity 0.2s, transform 0.15s;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cta-btn--primary:hover {
+    opacity: 0.92;
+    transform: translateY(-1px);
+}
+
+.cta-btn--secondary {
+    padding: 13px 28px;
+    background-color: transparent;
+    color: #ffff;
+    border: 1.5px solid rgba(255, 255, 255, 0.6);
+    border-radius: 999px;
+    cursor: pointer;
+    min-width: 220px;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: background 0.2s, opacity 0.2s;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.cta-btn--secondary:hover {
+    background-color: rgba(255, 255, 255, 0.10);
+}
+
+/* ====
+   14. OVERRIDES POR PÁGINA
+   ==== */
+
+/* Pareja — títulos */
+.main--pareja .service-section__title {
+    color: rgba(112, 88, 160, 1);
+}
+
+.main--pareja .service-section__title::after {
+    background: rgba(112, 88, 160, 0.5);
+}
+
+/* Individual — proceso escalonado en azul */
+.main--individual .service-proceso-escalonado {
+    background-color: #f0f8ff;
+}
+
+.main--individual .proceso-step__icon {
+    background: rgba(88, 112, 160, 0.10);
+}
+
+.main--individual .proceso-step__number {
+    color: rgba(88, 112, 160, 1);
+}
+
+.main--individual .proceso-escalonado__steps::before {
+    border-top-color: rgba(88, 112, 160, 0.25);
+}
+
+.main--individual .proceso-step {
+    border-color: rgba(88, 112, 160, 0.08);
+}
+
+/* Infantil — proceso escalonado en turquesa */
+.main--infantil .service-proceso-escalonado {
+    background-color: rgba(0, 144, 168, 0.06);
+}
+
+.main--infantil .proceso-step__icon {
+    background: rgba(0, 144, 168, 0.10);
+}
+
+.main--infantil .proceso-step__number {
+    color: rgba(0, 144, 168, 1);
+}
+
+.main--infantil .proceso-escalonado__steps::before {
+    border-top-color: rgba(0, 144, 168, 0.25);
+}
+
+.main--infantil .proceso-step {
+    border-color: rgba(0, 144, 168, 0.08);
+}
+
+/* ====
+   15. RESPONSIVE
+   ==== */
+
+@media (max-width: 960px) {
+    .hero-asimetrico__inner {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .hero-asimetrico__img {
+        max-width: 100%;
+        height: 340px;
+    }
+
+    .hero-asimetrico__card {
+        margin-left: 0;
+    }
+
+    .hero-asimetrico__acento {
+        display: none;
+    }
+
+    .proceso-escalonado__steps {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .proceso-escalonado__steps::before {
+        display: none;
+    }
+
+    .proceso-step--1,
+    .proceso-step--2,
+    .proceso-step--3 {
+        margin-bottom: 0;
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .etapas-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 900px) {
+    .service-intro__content,
+    .texton-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .service-intro__text,
+    .on-text {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .service-intro__text h2::after,
+    .on-text h2::after {
+        margin: 12px auto 0;
+    }
+
+    .service-intro__image,
+    .on-image {
+        justify-content: center;
+    }
+
+    .service-intro__image img,
+    .on-image img {
+        max-width: 520px;
+    }
+
+    .boton-on,
+    .boton-on--dual {
+        justify-content: center;
+    }
+
+    .service-cta__inner {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .service-cta__text {
+        text-align: center;
+    }
+
+    .service-cta__actions {
+        width: 100%;
+        align-items: center;
+    }
+
+    .audience-card {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .head-servicio,
+    .head-online {
+        min-height: 380px;
+        background-position: center;
+    }
+
+    .titulo-servicio,
+    .titulo-online {
+        padding: 20px 16px 140px;
+    }
+
+    .head-servicio .nav__menu,
+    .head-online .nav__menu {
+        background: rgba(21, 76, 138, 0.94);
+        border-radius: 12px;
+        padding-bottom: 10px;
+    }
+
+    .head-servicio .nav__dropdown,
+    .head-online .nav__dropdown {
+        background: rgba(255, 255, 255, 0.08);
+    }
+
+    .benefits .card,
+    .faq-cards .card {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    .service-intro,
+    .texton {
+        padding: 3.5rem 1.25rem 4rem;
+    }
+
+    .service-intro__text h2,
+    .on-text h2 {
+        font-size: clamp(30px, 8vw, 40px);
+    }
+
+    .boton-on {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .cta-link {
+        width: 100%;
+    }
+
+    .submit-on {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .mosaico-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .mosaico-card--wide {
+        grid-column: auto;
+    }
+
+    .hero-asimetrico {
+        padding: 3.5rem 1.25rem 4rem;
+    }
+
+    .hero-asimetrico__card {
+        padding: 2rem 1.5rem;
+    }
+
+    .hero-asimetrico__img {
+        height: 260px;
+    }
+
+    .cta-btn--primary,
+    .cta-btn--secondary {
+        min-width: 0;
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .service-audience,
+    .service-faq,
+    .service-cta,
+    .service-mosaico,
+    .service-proceso-escalonado,
+    .service-etapas,
+    .benefits,
+    .faq-section,
+    .cta {
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
+    }
+
+    .titulo-servicio__label,
+    .titulo-online__label {
+        font-size: 2rem;
+    }
+}

@@ -1,0 +1,378 @@
+/* 
+    PROYECTO: Alessa - RAPADO
+    ARCHIVO: global.css
+    DESCRIPCIÓN: Navegación, Footer y elementos persistentes (botones flotantes).
+*/
+
+/* ====
+   NAV — global
+   ==== */
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 32px;
+    height: 80px;
+    position: relative;
+    z-index: 100;
+}
+.nav__logo {
+    padding-top: 50px;
+}
+.nav__logo img {
+    height: 110px;
+    width: auto;
+    display: block;
+}
+
+/* Lista principal */
+.nav__menu {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav__link {
+    display: block;
+    padding: 8px 14px;
+    font-size: 16px;
+    font-weight: 300;
+    color: #ffff;
+    text-decoration: none;
+    font-family: var(--font-main);
+    border-radius: 6px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: background 0.18s;
+    white-space: nowrap;
+}
+
+.nav__link:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+/* CTA Agendar */
+.nav__cta {
+    display: inline-block;
+    padding: 8px 20px;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--color-primario);
+    background: #ffff;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: opacity 0.18s, transform 0.15s;
+    white-space: nowrap;
+}
+
+.nav__cta:hover {
+    opacity: 0.88;
+    transform: translateY(-1px);
+}
+
+/* Dropdown */
+.nav__item--dropdown {
+    position: relative;
+}
+
+.nav__chevron {
+    font-size: 10px;
+    margin-left: 4px;
+    transition: transform 0.2s;
+}
+
+.nav__item--dropdown:hover .nav__chevron,
+.nav__item--dropdown .nav__dropdown-toggle[aria-expanded="true"] .nav__chevron {
+    transform: rotate(180deg);
+}
+
+.nav__dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 200px;
+    background: #ffff;
+    border-radius: 10px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    padding: 8px 0;
+    list-style: none;
+    z-index: 200;
+}
+
+/* Abre con hover en desktop */
+.nav__item--dropdown:hover .nav__dropdown {
+    display: block;
+}
+
+.nav__dropdown-link {
+    display: block;
+    padding: 10px 18px;
+    font-size: 14px;
+    color: var(--color-texto-dark);
+    text-decoration: none;
+    transition: background 0.15s;
+}
+
+.nav__dropdown-link:hover {
+    background: rgba(34, 114, 211, 0.07);
+    color: var(--color-primario);
+}
+
+/* Botón hamburger — oculto en desktop */
+.nav__toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: #ffff;
+    font-size: 22px;
+    cursor: pointer;
+    padding: 8px;
+    line-height: 1;
+}
+
+/* --- BOTONES FLOTANTES --- */
+
+#btnArriba,
+#btnSeguimiento,
+#btnPsic {
+    position: fixed;
+    z-index: 99;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background: transparent;
+    padding: 0;
+    width: 68px;
+    height: 68px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* OCULTOS por defecto — se muestran vía clase .btn-visible */
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.35s ease, visibility 0.35s ease, transform 0.25s ease;
+}
+
+#btnSeguimiento,
+#btnPsic {
+    bottom: 96px;
+    right: 20px;
+}
+
+#btnArriba {
+    bottom: 20px;
+    right: 20px;
+}
+
+#btnArriba img,
+#btnSeguimiento img,
+#btnPsic img {
+    width: 68px;
+    height: 68px;
+    object-fit: contain;
+    display: block;
+    border-radius: 50%;
+}
+
+/* Clase que activa la visibilidad */
+#btnArriba.btn-visible,
+#btnSeguimiento.btn-visible,
+#btnPsic.btn-visible {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+#btnArriba:hover,
+#btnSeguimiento:hover,
+#btnPsic:hover {
+    transform: translateY(-3px);
+    opacity: 0.88;
+}
+
+@media (max-width: 480px) {
+    #btnArriba,
+    #btnSeguimiento,
+    #btnPsic {
+        width: 56px;
+        height: 56px;
+    }
+    #btnArriba img,
+    #btnSeguimiento img,
+    #btnPsic img {
+        width: 56px;
+        height: 56px;
+    }
+    #btnSeguimiento, #btnPsic { bottom: 80px; right: 14px; }
+    #btnArriba { bottom: 14px; right: 14px; }
+}
+/* --- FOOTER --- */
+footer {
+    background: var(--color-bg-light);
+    padding: 60px 0 30px 0;
+    margin-top: auto;
+}
+
+.contenedor-footer {
+    display: flex;
+    width: 90%;
+    justify-content: space-between;
+    margin: auto;
+    padding-bottom: 50px;
+    border-bottom: 1px solid var(--color-primario);
+}
+
+.content-foo {
+    text-align: center;
+}
+
+.content-foo h4 {
+    font-size: 16px;
+    color: var(--color-texto-dark);
+    border-bottom: 3px solid var(--color-primario);
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+.content-foo p,
+.content-foo a p {
+    font-size: 15px;
+    color: var(--color-texto-light);
+}
+
+.content-foo a {
+    text-decoration: none;
+}
+
+.titulo-final {
+    text-align: center;
+    color: #9e9797;
+    margin-top: 20px;
+    font-size: 15px;
+}
+
+.titulo-final h3 {
+    font-size: 15px;
+    font-weight: 400;
+    color: #9e9797;
+}
+
+.footer-legal {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 12px;
+    padding-bottom: 20px;
+}
+
+.footer-legal a {
+    color: #9e9797;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.footer-legal a:hover {
+    text-decoration: underline;
+}
+
+.footer-legal a + a {
+    padding-left: 1.5rem;
+    border-left: 1px solid #ccc;
+}
+
+@media (max-width: 768px) {
+    .contenedor-footer {
+        flex-direction: column;
+        align-items: center;
+    }
+    .content-foo {
+        margin-bottom: 20px;
+    }
+}
+
+/* ====
+   NAV — MOBILE
+   ==== */
+
+@media (max-width: 768px) {
+    .nav {
+        padding: 0 20px;
+        flex-wrap: wrap;
+        height: auto;
+        min-height: 56px;
+    }
+
+    .nav__toggle {
+        display: block;
+    }
+
+    .nav__menu {
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        gap: 0;
+        padding: 12px 0 16px;
+        border-top: 1px solid rgba(255,255,255,0.15);
+        margin-top: 4px;
+    }
+
+    .nav__menu--open {
+        display: flex;
+    }
+
+    .nav__item {
+        width: 100%;
+    }
+
+    .nav__link {
+        width: 100%;
+        padding: 12px 16px;
+        border-radius: 0;
+        font-size: 15px;
+    }
+
+    .nav__item--cta {
+        padding: 12px 16px;
+    }
+
+    .nav__cta {
+        color: #ffff;
+        background: var(--color-primario);
+        padding: 10px 20px;
+        display: inline-block;
+    }
+
+    /* Dropdown en mobile: siempre visible cuando el menú está abierto */
+    .nav__dropdown {
+        display: block;
+        position: static;
+        box-shadow: none;
+        border-radius: 0;
+        background: rgba(255,255,255,0.08);
+        padding: 0;
+    }
+
+    .nav__dropdown-link {
+        color: rgba(255,255,255,0.85);
+        padding: 10px 32px;
+        font-size: 14px;
+    }
+
+    .nav__dropdown-link:hover {
+        background: rgba(255,255,255,0.1);
+        color: #ffff;
+    }
+
+    .nav__chevron {
+        display: none;
+    }
+}

@@ -1,0 +1,536 @@
+/*
+    PROYECTO: Alessa — RAPADO
+    ARCHIVO: equipo.css
+    DESCRIPCIÓN: Estilos para las páginas de perfil de psicólogos.
+
+    ÍNDICE:
+        1.  Header del psicólogo
+        2.  Hero (foto + info + CTA)
+        3.  Chips de modalidad
+        4.  Bloques informativos
+        5.  Testimonios (placeholder fase 2)
+        6.  Variantes de color por psicólogo
+        7.  Responsive
+*/
+
+/* ====
+   1. HEADER DEL PSICÓLOGO
+   ==== */
+
+.head-psicologo {
+    position: relative;
+    min-height: 340px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.head-psicologo--cesar {
+    background: linear-gradient(
+        135deg,
+        rgba(112, 88, 160, 0.92),
+        rgba(88, 68, 140, 0.85)
+    );
+}
+
+.head-psicologo--sarai {
+    background: linear-gradient(
+        135deg,
+        rgba(88, 112, 160, 0.92),
+        rgba(61, 90, 140, 0.85)
+    );
+}
+
+.head-psicologo--jaime {
+    background: linear-gradient(
+        135deg,
+        rgba(61, 108, 173, 0.92),
+        rgba(30, 70, 140, 0.85)
+    );
+}
+
+.head-psicologo--victor {
+    background: linear-gradient(
+        135deg,
+        rgba(141, 153, 192, 0.92),
+        rgba(100, 120, 170, 0.85)
+    );
+}
+
+.titulo-psicologo {
+    position: relative;
+    z-index: 2;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px 140px;
+    text-align: center;
+}
+
+.titulo-psicologo__nombre {
+    font-size: clamp(34px, 5vw, 56px);
+    font-weight: 300;
+    letter-spacing: 0.04em;
+    color: #ffff;
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.20);
+    margin: 0;
+}
+
+.titulo-psicologo__nombre::after {
+    content: '';
+    display: block;
+    width: 48px;
+    height: 3px;
+    background: rgba(255, 255, 255, 0.65);
+    margin: 14px auto 0;
+    border-radius: 2px;
+}
+
+.head-psicologo .wave {
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    width: 100%;
+    z-index: 2;
+}
+
+.head-psicologo .nav__link:hover {
+    background: rgba(255, 255, 255, 0.12);
+}
+
+.head-psicologo .nav__cta {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+/* ====
+   2. HERO — foto + info + CTA
+   ==== */
+
+.psic-hero {
+    background: #f0f8ff;
+    padding: 4rem 2rem 5rem;
+}
+
+.psic-hero__inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 360px minmax(420px, 1fr);
+    gap: 2.4rem;
+    align-items: start;
+}
+
+/* Ensure children don't force overflow */
+.psic-hero__inner > * { min-width: 0; }
+
+/* Adjust aside (Doctoralia widget) inside hero */
+.psic-hero__agenda {
+    width: 420px; /* fixed to make widget visually stable */
+    align-self: start;
+    justify-self: center; /* center widget in its column */
+    background: #ffffff;
+    border-radius: 14px;
+    padding: 18px;
+    box-shadow: 0 8px 28px rgba(0,0,0,0.08);
+    border: 1px solid rgba(30,98,116,0.06);
+}
+
+/* Ensure second column content lays out correctly when widget exists */
+.psic-hero__presentacion {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+/* Responsive breakpoint: stack at 1000px */
+@media (max-width: 1000px) {
+    .psic-hero__inner { grid-template-columns: 1fr; gap: 1.5rem; }
+    .psic-hero__agenda { width: 100%; justify-self: stretch; }
+}
+
+
+.psic-hero__foto {
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+    object-position: top center;
+    border-radius: 18px;
+    box-shadow: 0 14px 40px rgba(0, 0, 0, 0.15);
+    display: block;
+}
+
+.psic-hero__info {
+    display: flex;
+    flex-direction: column;
+    gap: 1.4rem;
+    padding-top: 0.5rem;
+}
+
+.psic-hero__nombre {
+    font-size: clamp(28px, 3vw, 40px);
+    font-weight: 600;
+    color: var(--color-secundario);
+    margin: 0;
+    line-height: 1.2;
+}
+
+.psic-hero__cedula {
+    font-size: 0.95rem;
+    color: var(--color-texto-light);
+    margin: -0.8rem 0 0;
+    font-weight: 400;
+}
+
+/* ====
+   3. CHIPS DE MODALIDAD
+   ==== */
+
+.psic-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.psic-chip {
+    display: inline-block;
+    padding: 5px 16px;
+    border-radius: 999px;
+    font-size: 0.84rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    border: 1.5px solid;
+}
+
+/* Colores de chips por psicólogo — se aplican via clase del main */
+.main--cesar .psic-chip {
+    background: rgba(112, 88, 160, 0.10);
+    color: rgba(112, 88, 160, 1);
+    border-color: rgba(112, 88, 160, 0.30);
+}
+
+.main--sarai .psic-chip {
+    background: rgba(88, 112, 160, 0.10);
+    color: rgba(88, 112, 160, 1);
+    border-color: rgba(88, 112, 160, 0.30);
+}
+
+.main--jaime .psic-chip {
+    background: rgba(61, 108, 173, 0.10);
+    color: rgba(61, 108, 173, 1);
+    border-color: rgba(61, 108, 173, 0.30);
+}
+
+.main--victor .psic-chip {
+    background: rgba(141, 153, 192, 0.12);
+    color: rgba(100, 120, 170, 1);
+    border-color: rgba(141, 153, 192, 0.40);
+}
+
+/* CTA del hero */
+.psic-hero__cta {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-top: 0.5rem;
+}
+
+.psic-cta-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 28px;
+    border-radius: 999px;
+    font-size: 1rem;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    transition: opacity 0.2s, transform 0.15s;
+    max-width: 300px;
+}
+
+.psic-cta-btn:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+}
+
+.psic-cta-btn--primary {
+    color: #ffff;
+}
+
+.psic-cta-btn--secondary {
+    background: transparent;
+}
+
+.main--cesar .psic-cta-btn--primary { background: rgba(112, 88, 160, 1); }
+.main--cesar .psic-cta-btn--secondary {
+    color: rgba(112, 88, 160, 1);
+    border: 1.5px solid rgba(112, 88, 160, 0.45);
+}
+.main--cesar .psic-cta-btn--secondary:hover { background: rgba(112, 88, 160, 0.06); }
+
+.main--sarai .psic-cta-btn--primary { background: rgba(88, 112, 160, 1); }
+.main--sarai .psic-cta-btn--secondary {
+    color: rgba(88, 112, 160, 1);
+    border: 1.5px solid rgba(88, 112, 160, 0.45);
+}
+.main--sarai .psic-cta-btn--secondary:hover { background: rgba(88, 112, 160, 0.06); }
+
+.main--jaime .psic-cta-btn--primary { background: rgba(61, 108, 173, 1); }
+.main--jaime .psic-cta-btn--secondary {
+    color: rgba(61, 108, 173, 1);
+    border: 1.5px solid rgba(61, 108, 173, 0.45);
+}
+.main--jaime .psic-cta-btn--secondary:hover { background: rgba(61, 108, 173, 0.06); }
+
+.main--victor .psic-cta-btn--primary { background: rgba(100, 120, 170, 1); }
+.main--victor .psic-cta-btn--secondary {
+    color: rgba(100, 120, 170, 1);
+    border: 1.5px solid rgba(141, 153, 192, 0.50);
+}
+.main--victor .psic-cta-btn--secondary:hover { background: rgba(141, 153, 192, 0.10); }
+
+/* ====
+   4. BLOQUES INFORMATIVOS
+   ==== */
+/* Título visible de sección — SEO friendly */
+.psic-bloques > .seccion-titulo {
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    margin: 0 auto 2rem;
+    max-width: 1100px;
+    padding-left: 0.25rem;
+    position: relative;
+}
+
+.psic-bloques > .seccion-titulo::before {
+    content: '';
+    display: inline-block;
+    width: 4px;
+    height: 1em;
+    border-radius: 2px;
+    margin-right: 0.6em;
+    vertical-align: middle;
+    opacity: 0.4;
+}
+
+/* Color por psicólogo */
+.main--cesar .psic-bloques > .seccion-titulo { color: rgba(112, 88, 160, 1); }
+.main--cesar .psic-bloques > .seccion-titulo::before { background: rgba(112, 88, 160, 1); }
+
+.main--sarai .psic-bloques > .seccion-titulo { color: rgba(88, 112, 160, 1); }
+.main--sarai .psic-bloques > .seccion-titulo::before { background: rgba(88, 112, 160, 1); }
+
+.main--jaime .psic-bloques > .seccion-titulo { color: rgba(61, 108, 173, 1); }
+.main--jaime .psic-bloques > .seccion-titulo::before { background: rgba(61, 108, 173, 1); }
+
+.main--victor .psic-bloques > .seccion-titulo { color: rgba(100, 120, 170, 1); }
+.main--victor .psic-bloques > .seccion-titulo::before { background: rgba(141, 153, 192, 1); }
+
+
+.psic-bloques {
+    background: #fff;
+    padding: 4.5rem 2rem;
+}
+
+.psic-bloques__inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.psic-bloque {
+    background: #f9fbfc;
+    border: 1px solid rgba(30, 98, 116, 0.08);
+    border-radius: 18px;
+    padding: 2rem 1.75rem;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+}
+
+.psic-bloque__icono {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    margin-bottom: 1.1rem;
+}
+
+.psic-bloque h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.psic-bloque ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+}
+
+.psic-bloque ul li {
+    font-size: 0.94rem;
+    color: var(--color-texto-light);
+    line-height: 1.6;
+    padding-left: 1.2rem;
+    position: relative;
+}
+
+.psic-bloque ul li::before {
+    content: '·';
+    position: absolute;
+    left: 0;
+    font-weight: 700;
+    font-size: 1.1rem;
+    line-height: 1.4;
+}
+
+/* Colores de bloques por psicólogo */
+.main--cesar .psic-bloque__icono {
+    background: rgba(112, 88, 160, 0.10);
+    color: rgba(112, 88, 160, 1);
+}
+.main--cesar .psic-bloque h3 { color: rgba(112, 88, 160, 1); }
+.main--cesar .psic-bloque ul li::before { color: rgba(112, 88, 160, 0.7); }
+
+.main--sarai .psic-bloque__icono {
+    background: rgba(88, 112, 160, 0.10);
+    color: rgba(88, 112, 160, 1);
+}
+.main--sarai .psic-bloque h3 { color: rgba(88, 112, 160, 1); }
+.main--sarai .psic-bloque ul li::before { color: rgba(88, 112, 160, 0.7); }
+
+.main--jaime .psic-bloque__icono {
+    background: rgba(61, 108, 173, 0.10);
+    color: rgba(61, 108, 173, 1);
+}
+.main--jaime .psic-bloque h3 { color: rgba(61, 108, 173, 1); }
+.main--jaime .psic-bloque ul li::before { color: rgba(61, 108, 173, 0.7); }
+
+.main--victor .psic-bloque__icono {
+    background: rgba(141, 153, 192, 0.15);
+    color: rgba(100, 120, 170, 1);
+}
+.main--victor .psic-bloque h3 { color: rgba(100, 120, 170, 1); }
+.main--victor .psic-bloque ul li::before { color: rgba(141, 153, 192, 0.8); }
+
+/* ====
+   5. TESTIMONIOS — placeholder fase 2
+   ==== */
+
+.psic-testimonios {
+    background: #f2f2f2;
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+.psic-testimonios__inner {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.psic-testimonios h2 {
+    font-size: clamp(22px, 2.5vw, 32px);
+    font-weight: 400;
+    color: var(--color-primario);
+    margin-bottom: 0.5rem;
+}
+
+.psic-testimonios h2::after {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 3px;
+    background: var(--color-primario);
+    margin: 12px auto 0;
+    border-radius: 2px;
+    opacity: 0.4;
+}
+
+.psic-testimonios__placeholder {
+    margin-top: 2.5rem;
+    padding: 2.5rem;
+    background: #fff;
+    border-radius: 18px;
+    border: 1.5px dashed rgba(30, 98, 116, 0.20);
+    color: var(--color-texto-light);
+    font-size: 0.95rem;
+    line-height: 1.7;
+}
+
+.psic-testimonios__placeholder i {
+    font-size: 2rem;
+    display: block;
+    margin-bottom: 0.75rem;
+    opacity: 0.35;
+    color: var(--color-primario);
+}
+
+/* ====
+   7. RESPONSIVE
+   ==== */
+
+@media (max-width: 900px) {
+    .psic-hero__inner {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .psic-hero__foto {
+        height: 360px;
+        max-width: 320px;
+        margin: 0 auto;
+    }
+
+    .psic-hero__info {
+        text-align: center;
+        align-items: center;
+    }
+
+    .psic-hero__cta {
+        align-items: center;
+    }
+
+    .psic-cta-btn {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .psic-bloques__inner {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .psic-hero {
+        padding: 3rem 1.25rem 4rem;
+    }
+
+    .psic-bloques {
+        padding: 3rem 1.25rem;
+    }
+
+    .titulo-psicologo {
+        padding: 30px 16px 120px;
+    }
+
+    .titulo-psicologo__nombre {
+        font-size: 2rem;
+    }
+
+    .psic-testimonios {
+        padding: 3rem 1.25rem;
+    }
+}

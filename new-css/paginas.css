@@ -428,6 +428,26 @@
     background: rgba(88, 112, 160, 0.16);
 }
 
+/* ====
+   LISTAS DENTRO DE TARJETAS LEGALES (tyc.html / aviso.html)
+   ==== */
+
+.contacto-card__contenido ol,
+.contacto-card__contenido ul {
+    padding-left: 22px;
+    margin: 12px 0;
+}
+
+.contacto-card__contenido li {
+    margin-bottom: 6px;
+}
+
+.contacto-card__contenido ol ol {
+    list-style-type: lower-alpha;
+    padding-left: 20px;
+    margin: 6px 0;
+}
+
 /* ============================
    RESPONSIVE
    ============================ */

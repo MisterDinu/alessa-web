@@ -148,23 +148,37 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 });
-
 // NAV — toggle mobile + dropdown
 document.addEventListener('DOMContentLoaded', () => {
     // Hamburger
     const toggle = document.getElementById('nav-toggle');
     const menu   = document.getElementById('nav-menu');
+    const nav    = document.querySelector('.nav');
 
     if (toggle && menu) {
+        const updateIcon = (isOpen) => {
+            const icon = toggle.querySelector('i');
+            if (icon) {
+                icon.classList.toggle('fa-bars', !isOpen);
+                icon.classList.toggle('fa-times', isOpen);
+            }
+        };
+
         toggle.addEventListener('click', () => {
             const isOpen = menu.classList.toggle('nav__menu--open');
+            document.body.classList.toggle('body--nav-open', isOpen);
+            nav.classList.toggle('nav--menu-open', isOpen);
             toggle.setAttribute('aria-expanded', isOpen);
+            updateIcon(isOpen);
         });
 
         menu.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => {
                 menu.classList.remove('nav__menu--open');
+                document.body.classList.remove('body--nav-open');
+                nav.classList.remove('nav--menu-open');
                 toggle.setAttribute('aria-expanded', false);
+                updateIcon(false);
             });
         });
     }

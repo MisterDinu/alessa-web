@@ -670,9 +670,39 @@ header {
    RESPONSIVE
    ==== */
 
+@media (max-width: 1200px) {
+    .galeria-port {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        max-width: 900px;
+        margin: 0 auto;
+        justify-content: center;
+    }
+
+    .imagen-port {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 240 / 340;
+    }
+    .galeria-port .psicologo:last-child {
+        grid-column: 2;
+    }
+}
+
 @media (max-width: 900px) {
+    .textos-header {
+        padding-bottom: 300px;
+    }
+
+    .textos-header .hero-slogan {
+        font-size: clamp(24px, 4.5vw, 38px);
+    }
+
+    .textos-header .hero-sub {
+        font-size: clamp(18px, 3.2vw, 28px);
+    }
+
     .servicio-item,
-    .servicio-item--reverse {
+    .servicio-item--reverse {  
         flex-direction: column;
         text-align: center;
     }
@@ -723,6 +753,18 @@ header {
 
     .galeria-port {
         gap: 20px;
+    }
+
+    .textos-header {
+        padding-bottom: 190px;
+    }
+
+    .textos-header .hero-slogan {
+        font-size: clamp(22px, 6vw, 30px);
+    }
+
+    .textos-header .hero-sub {
+        font-size: clamp(17px, 4.5vw, 23px);
     }
 }
 

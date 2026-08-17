@@ -39,33 +39,34 @@
 .head-servicio--individual {
     background:
         linear-gradient(rgba(61, 108, 173, 0.493), rgba(20, 49, 130, 0.26)),
-        url("../img/Terapia individual.jpeg");
+        url("../img/H-individual.jpeg");
     background-size: cover;
     background-position: center 35%;
 }
 
 .head-servicio--online {
     background:
-        linear-gradient(rgba(75, 63, 185, 0.303), rgba(82, 58, 170, 0.368)),
-        url("../img/Terapia online.jpg");
+        linear-gradient(rgba(34, 114, 211, 0.458),
+        rgba(38, 60, 70, 0.233)),
+        url("../img/H-online.jpg");
     background-size: cover;
     background-position: center 35%;
 }
 
 .head-servicio--pareja {
     background:
-        linear-gradient(rgba(112, 88, 160, 0.82), rgba(112, 88, 160, 0.65)),
-        url("../img/pareja-hero.jpg");
+        linear-gradient(rgba(72, 28, 160, 0.371), rgba(112, 88, 160, 0.187)),
+        url("../img/H-pareja.jpg");
     background-size: cover;
-    background-position: center 35%;
+    background-position: center 85%;
 }
 
 .head-servicio--infantil {
     background:
-        linear-gradient(rgba(0, 144, 168, 0.82), rgba(0, 144, 168, 0.65)),
-        url("../img/infantil-hero.jpg");
+        linear-gradient(rgba(0, 143, 168, 0.255), rgba(0, 143, 168, 0.117)),
+        url("../img/H-infantil.jpg");
     background-size: cover;
-    background-position: center 35%;
+    background-position: center 65%;
 }
 
 /* Legacy — Online aún usa esta clase */
@@ -74,7 +75,7 @@
     min-height: 420px;
     background:
         linear-gradient(rgba(43, 146, 211, 0.533), rgba(31, 63, 178, 0.479)),
-        url("../img/Terapia online.jpg");
+        url("../img/H-online.jpg");
     background-size: cover;
     background-position: center 35%;
     background-repeat: no-repeat;
@@ -564,7 +565,7 @@
    ==== */
 
 .hero-asimetrico {
-    background-color: rgba(240, 235, 250, 0.55);
+    background-color: rgb(242, 240, 247);
     padding: 5rem 2rem 5.5rem;
 }
 
@@ -1240,20 +1241,67 @@
    ==== */
 
 @media (max-width: 960px) {
+    .hero-asimetrico {
+        padding: 0 1rem 3rem;
+    }
+
     .hero-asimetrico__inner {
-        grid-template-columns: 1fr;
-        gap: 2rem;
+        position: relative;
+        display: block;
+        max-width: 78%;
+        margin: 0 auto;
     }
 
     .hero-asimetrico__img {
-        max-width: 100%;
-        height: 340px;
+        width: 72%;
+        max-width: none;
+        height: 280px;
+        margin-left: 0;
+        border-radius: 16px;
+    }
+
+    .hero-asimetrico__card-wrap {
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 56%;
+        z-index: 2;
     }
 
     .hero-asimetrico__card {
         margin-left: 0;
+        padding: 1.5rem;
+        background: rgba(255, 255, 255, 0.774);
+        border-radius: 16px;
+        box-shadow: 0 8px 24px rgba(112, 88, 160, 0.14);
     }
 
+    .hero-asimetrico__card h2 {
+        font-size: 1.35rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .hero-asimetrico__card p {
+        font-size: 0.95rem;
+        line-height: 1.55;
+        margin-bottom: 1rem;
+    }
+
+    .hero-asimetrico--pareja .boton-on,
+    .hero-asimetrico--pareja .boton-on--dual {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.6rem;
+    }
+
+    .hero-asimetrico--pareja .submit-on {
+        width: 100%;
+        min-width: 0;
+        padding: 12px 18px;
+        font-size: 0.9rem;
+        min-height: 44px;
+    }
     .hero-asimetrico__acento {
         display: none;
     }
@@ -1281,6 +1329,22 @@
 }
 
 @media (max-width: 900px) {
+    .head-servicio,
+    .head-online {
+        min-height: 100px;
+        height: 300px;
+    }
+
+    .titulo-servicio,
+    .titulo-online {
+        padding: 20px 16px 90px;
+    }
+
+    .head-servicio .wave,
+    .head-online .wave {
+        height: 180px !important;
+    }
+
     .service-intro__content,
     .texton-content {
         grid-template-columns: 1fr;
@@ -1330,35 +1394,220 @@
     .audience-card {
         max-width: 100%;
     }
+
+    .main--individual .service-intro {
+        padding: 1.5rem 1rem 3.5rem;
+    }
+
+    .main--individual .service-intro__content {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.75rem;
+        max-width: 680px;
+        padding: 2.25rem 1.75rem 1.75rem;
+        background: #ffff;
+        border-radius: 20px;
+        box-shadow: 0 10px 28px rgba(30, 75, 120, 0.10);
+    }
+
+    .main--individual .service-intro__text {
+        max-width: 560px;
+        text-align: left;
+    }
+
+    .main--individual .service-intro__text h2 {
+        max-width: 520px;
+        margin-bottom: 0.5rem;
+        font-size: clamp(30px, 5.5vw, 42px);
+        line-height: 1.18;
+    }
+
+    .main--individual .service-intro__text h2::after {
+        margin: 12px 0 0;
+    }
+
+    .main--individual .service-intro__text p {
+        max-width: 540px;
+        margin-top: 1rem;
+        margin-bottom: 1.25rem;
+        font-size: 1rem;
+        line-height: 1.7;
+    }
+
+    .main--individual .boton-on,
+    .main--individual .boton-on--dual {
+        justify-content: flex-start;
+        gap: 0.7rem;
+    }
+
+    .main--individual .submit-on {
+        min-width: 210px;
+        min-height: 48px;
+        padding: 12px 20px;
+        font-size: 0.95rem;
+    }
+
+    .main--individual .service-intro__image {
+        justify-content: center;
+    }
+
+    .main--individual .service-intro__image img {
+        width: 100%;
+        max-width: 100%;
+        border-radius: 14px;
+    }
+
+    /* ====
+       HOMOLOGACIÓN RESPONSIVE — Infantil y Online igual que Individual
+       ==== */
+
+    /* Infantil */
+    .main--infantil .service-intro {
+        padding: 1.5rem 1rem 3.5rem;
+    }
+
+    .main--infantil .service-intro__content {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.75rem;
+        max-width: 680px;
+        padding: 2.25rem 1.75rem 1.75rem;
+        background: #ffff;
+        border-radius: 20px;
+        box-shadow: 0 10px 28px rgba(0, 144, 168, 0.10);
+    }
+
+    .main--infantil .service-intro__text {
+        max-width: 560px;
+        text-align: left;
+    }
+
+    .main--infantil .service-intro__text h2 {
+        max-width: 520px;
+        margin-bottom: 0.5rem;
+        font-size: clamp(30px, 5.5vw, 42px);
+        line-height: 1.18;
+    }
+
+    .main--infantil .service-intro__text h2::after {
+        margin: 12px 0 0;
+        background: rgba(0, 144, 168, 0.5);
+    }
+
+    .main--infantil .service-intro__text p {
+        max-width: 540px;
+        margin-top: 1rem;
+        margin-bottom: 1.25rem;
+        font-size: 1rem;
+        line-height: 1.7;
+    }
+
+    .main--infantil .boton-on,
+    .main--infantil .boton-on--dual {
+        justify-content: flex-start;
+        gap: 0.7rem;
+    }
+
+    .main--infantil .submit-on {
+        min-width: 210px;
+        min-height: 48px;
+        padding: 12px 20px;
+        font-size: 0.95rem;
+    }
+
+    .main--infantil .service-intro__image {
+        justify-content: center;
+    }
+
+    .main--infantil .service-intro__image img {
+        width: 100%;
+        max-width: 100%;
+        border-radius: 14px;
+    }
+
+    /* Online */
+    .texton {
+        padding: 1.5rem 1rem 3.5rem;
+    }
+
+    .texton-content {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.75rem;
+        max-width: 680px;
+        padding: 2.25rem 1.75rem 1.75rem;
+        background: #ffff;
+        border-radius: 20px;
+        box-shadow: 0 10px 28px rgba(30, 75, 120, 0.10);
+    }
+
+    .texton .on-text {
+        max-width: 560px;
+        text-align: left;
+    }
+
+    .texton .on-text h2 {
+        max-width: 520px;
+        margin-bottom: 0.5rem;
+        font-size: clamp(30px, 5.5vw, 42px);
+        line-height: 1.18;
+    }
+
+    .texton .on-text h2::after {
+        margin: 12px 0 0;
+    }
+
+    .texton .on-text p {
+        max-width: 540px;
+        margin-top: 1rem;
+        margin-bottom: 1.25rem;
+        font-size: 1rem;
+        line-height: 1.7;
+    }
+
+    .texton .boton-on,
+    .texton .boton-on--dual {
+        justify-content: flex-start;
+        gap: 0.7rem;
+    }
+
+    .texton .submit-on {
+        min-width: 210px;
+        min-height: 48px;
+        padding: 12px 20px;
+        font-size: 0.95rem;
+    }
+
+    .texton .on-image {
+        justify-content: center;
+    }
+
+    .texton .on-image img {
+        width: 100%;
+        max-width: 100%;
+        border-radius: 14px;
+    }
+
+    /* ====
+       NAV MOBILE — colores por servicio
+       ==== */
+    .head-servicio--individual .nav__menu { background: #154c8ae8; }
+    .head-servicio--pareja .nav__menu { background: #7058a0e7; }
+    .head-servicio--infantil .nav__menu { background: #008fa8e8; }
+    .head-servicio--online .nav__menu,
+    .head-online .nav__menu { background: #154c8ae8; }
 }
 
-@media (max-width: 768px) {
-    .head-servicio,
-    .head-online {
-        min-height: 380px;
-        background-position: center;
+@media (max-width: 800px) {
+        .hero-asimetrico__card h2 {
+        font-size: 20px;
+        margin-bottom: 0.5rem;
     }
 
-    .titulo-servicio,
-    .titulo-online {
-        padding: 20px 16px 140px;
-    }
-
-    .head-servicio .nav__menu,
-    .head-online .nav__menu {
-        background: rgba(21, 76, 138, 0.94);
-        border-radius: 12px;
-        padding-bottom: 10px;
-    }
-
-    .head-servicio .nav__dropdown,
-    .head-online .nav__dropdown {
-        background: rgba(255, 255, 255, 0.08);
-    }
-
-    .benefits .card,
-    .faq-cards .card {
-        max-width: 100%;
+    .hero-asimetrico__card p {
+        font-size: 15px;
+        line-height: 1.55;
+        margin-bottom: 1rem;
     }
 }
 
@@ -1395,22 +1644,185 @@
         grid-column: auto;
     }
 
-    .hero-asimetrico {
-        padding: 3.5rem 1.25rem 4rem;
-    }
+.hero-asimetrico {
+    padding: 0.75rem 1.25rem 6rem;
+}
 
-    .hero-asimetrico__card {
-        padding: 2rem 1.5rem;
-    }
+.hero-asimetrico__inner {
+    width: 100%;
+    max-width: 94%;
+    min-height: 410px;
+    margin: 0 auto;
+}
 
-    .hero-asimetrico__img {
-        height: 260px;
-    }
+.hero-asimetrico__img {
+    width: 78%;
+    height: 270px;
+    margin-left: -0.5rem;
+}
 
+.hero-asimetrico__card-wrap {
+    top: 2rem;
+    right: -0.25rem;
+    width: 68%;
+    transform: none;
+}
+
+.hero-asimetrico__card {
+    padding: 2rem 1.5rem;
+}
+
+.hero-asimetrico__card h2 {
+    font-size: 21px;
+    line-height: 1.3;
+    margin-bottom: 0.8rem;
+}
+
+.hero-asimetrico__card p {
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
     .cta-btn--primary,
     .cta-btn--secondary {
         min-width: 0;
         width: 100%;
+    }
+
+    .main--individual .service-intro {
+        padding: 1rem 0.85rem 3rem;
+    }
+
+    .main--individual .service-intro__content {
+        gap: 1.5rem;
+        padding: 1.75rem 1.25rem 1.25rem;
+        border-radius: 18px;
+    }
+
+    .main--individual .service-intro__text h2 {
+        max-width: 100%;
+        font-size: 22px;
+        line-height: 1.18;
+    }
+
+    .main--individual .service-intro__text p {
+        max-width: 100%;
+        font-size: 16px;
+        line-height: 1.65;
+    }
+
+    .main--individual .boton-on,
+    .main--individual .boton-on--dual {
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.65rem;
+    }
+
+    .main--individual .cta-link {
+        width: 100%;
+    }
+
+    .main--individual .submit-on {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .main--individual .service-intro__image img {
+        border-radius: 12px;
+    }
+
+    .benefits .card,
+    .faq-cards .card {
+        max-width: 100%;
+    }
+
+    /* Infantil */
+    .main--infantil .service-intro {
+        padding: 1rem 0.85rem 3rem;
+    }
+
+    .main--infantil .service-intro__content {
+        gap: 1.5rem;
+        padding: 1.75rem 1.25rem 1.25rem;
+        border-radius: 18px;
+    }
+
+    .main--infantil .service-intro__text h2 {
+        max-width: 100%;
+        font-size: 22px;
+        line-height: 1.18;
+    }
+
+    .main--infantil .service-intro__text p {
+        max-width: 100%;
+        font-size: 16px;
+        line-height: 1.65;
+    }
+
+    .main--infantil .boton-on,
+    .main--infantil .boton-on--dual {
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.65rem;
+    }
+
+    .main--infantil .cta-link {
+        width: 100%;
+    }
+
+    .main--infantil .submit-on {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .main--infantil .service-intro__image img {
+        border-radius: 12px;
+    }
+
+    /* Online */
+    .texton {
+        padding: 1rem 0.85rem 3rem;
+    }
+
+    .texton-content {
+        gap: 1.5rem;
+        padding: 1.75rem 1.25rem 1.25rem;
+        border-radius: 18px;
+    }
+
+    .texton .on-text h2 {
+        max-width: 100%;
+        font-size: 22px;
+        line-height: 1.18;
+    }
+
+    .texton .on-text p {
+        max-width: 100%;
+        font-size: 16px;
+        line-height: 1.65;
+    }
+
+    .texton .boton-on,
+    .texton .boton-on--dual {
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.65rem;
+    }
+
+    .texton .cta-link {
+        width: 100%;
+    }
+
+    .texton .submit-on {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .texton .on-image img {
+        border-radius: 12px;
     }
 }
 
@@ -1430,6 +1842,41 @@
 
     .titulo-servicio__label,
     .titulo-online__label {
-        font-size: 2rem;
+        font-size: 25PX;
     }
+
+    .hero-asimetrico {
+        padding: 0.75rem 0.75rem .5rem;
+    }
+
+    .hero-asimetrico__inner {
+        max-width: 100%;
+        min-height: 450px;
+        transform: none;
+    }
+
+    .hero-asimetrico__img {
+        width: 76%;
+        height: 270px;
+        margin-top: 0;
+        margin-left: 0;
+    }
+
+    .hero-asimetrico__card-wrap {
+        top: 1.5rem;
+        right: 0;
+        width: 88%;
+        transform: none;
+    }
+
+    .hero-asimetrico__card h2 {
+        font-size: 20px;
+        line-height: 1.35;
+    }
+
+    .hero-asimetrico__card p {
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
 }

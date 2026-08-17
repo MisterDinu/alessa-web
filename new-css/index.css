@@ -17,7 +17,7 @@ header {
         rgba(34, 114, 211, 0.564),
         rgba(38, 60, 70, 0.511)
         ),
-        url("/img/header1.jpg");
+        url("/img/H-index.jpg");
     background-size: cover;
     background-position: center 15%;
     background-repeat: no-repeat;
@@ -701,17 +701,25 @@ header {
         font-size: clamp(18px, 3.2vw, 28px);
     }
 
+    .servicios {
+        padding-bottom: 20px;
+    }
+
+    .servicios .servicio-item:last-child {
+        margin-bottom: 0;
+    }
+
+    #costos {
+        padding-top: 20px;
+    }
+
     .servicio-item,
     .servicio-item--reverse {  
         flex-direction: column;
         text-align: center;
     }
 
-    .servicio-item__img {
-        width: 100%;
-        min-width: unset;
-        height: 220px;
-    }
+
 
     .servicio-item__titulo::after {
         margin: 8px auto 0;
@@ -739,6 +747,28 @@ header {
     .costos-confianza__copy {
         max-width: 520px;
     }
+
+    .servicio-item {
+    margin-bottom: 36px;
+    padding-bottom: 36px;
+    border-bottom: 1px solid rgba(34, 114, 211, 0.25);
+    }
+
+    .servicio-item__img {
+        width: 58%;
+        min-width: unset;
+        height: 100%;
+    }
+
+    .servicio-item__ctas .btn {
+        padding: 8px 18px;
+        font-size: 13px;
+    }
+    
+    .equipo {
+        padding-top: 0;
+    }
+
 }
 
 @media (max-width: 610px) {
@@ -746,29 +776,67 @@ header {
         min-height: 420px;
     }
 
-    .imagen-port {
-        width: 160px;
-        height: 220px;
-    }
-
     .galeria-port {
+        grid-template-columns: 1fr;
+        max-width: 300px;
+        margin: 0 auto;
         gap: 20px;
     }
 
+    .galeria-port .psicologo:last-child {
+        grid-column: auto;
+    }
+
+    .imagen-port {
+        width: 250px;
+    }
+
     .textos-header {
-        padding-bottom: 190px;
+        padding-bottom: 200px;
     }
 
     .textos-header .hero-slogan {
-        font-size: clamp(22px, 6vw, 30px);
+        font-size: 25px;
     }
 
     .textos-header .hero-sub {
-        font-size: clamp(17px, 4.5vw, 23px);
+        font-size: 20px;
+    }
+
+    .hero-card__h1{
+        font-size: 15px;
+    }
+
+    .hero-card__desc{
+        font-size: 12px;
+    }
+
+    .hero-card__btn {
+    padding: 8px 16px;
+    font-size: 12px;
+    }
+
+}
+
+@media (max-width: 480px) {
+    .hero-card__chips span {
+        font-size: 9px;
+        padding: 3px 10px;
     }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 445px) {
+    .textos-header .hero-slogan {
+        font-size: 22px;
+    }
+
+
+    .textos-header .hero-sub {
+        font-size: 20px;
+    }
+}
+
+/* @media (max-width: 600px) {
     .hero-card {
         margin-top: -50px;
         padding: 24px 20px;
@@ -778,4 +846,4 @@ header {
         width: 100%;
         text-align: center;
     }
-}
+} */
